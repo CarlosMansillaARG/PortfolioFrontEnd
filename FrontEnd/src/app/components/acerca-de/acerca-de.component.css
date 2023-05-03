@@ -1,13 +1,7 @@
-
 .row{
   padding: 20px;
   text-align: center;
 }
-/*
-div{
-  text-align: center;
-}
-*/
 /*foto perfil*/
 @media (min-width: 576px){
   #fotoperfil{
@@ -26,9 +20,7 @@ div{
     left: 35%;
     top: 35%;
   }
-
 }
-
 /*etiqueta nombre*/
 
 #nombre{
@@ -39,10 +31,8 @@ div{
 #carrera{
   font-size: 25px;
 }
-
 @media (max-width: 575px){
   #nombre{
     margin-top: 25%;
   }
 }
-
