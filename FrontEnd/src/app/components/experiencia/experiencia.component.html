@@ -1,28 +1,21 @@
-<div class="container">
-  <div class="row">
-    <h1>Experiencia Laboral</h1>
-      <div class="col-lg-1"></div>
-      <div class="col-lg-11">
-        <ul>
-          <li>
-            <h1>Trabajo 1</h1> - <h3>(years)</h3>
-          </li>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex nihil nulla laudantium perferendis enim eos aspernatur numquam totam voluptas libero veritatis, cupiditate, officiis sint reiciendis ad fuga ipsum commodi. Optio.
-          </p>
-          <li>
-            <h1>Trabajo 2</h1> - <h3>(years)</h3>
-          </li>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex nihil nulla laudantium perferendis enim eos aspernatur numquam totam voluptas libero veritatis, cupiditate, officiis sint reiciendis ad fuga ipsum commodi. Optio.
-          </p>
-          <li>
-            <h1>Trabajo 3</h1> - <h3>(years)</h3>
-          </li>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex nihil nulla laudantium perferendis enim eos aspernatur numquam totam voluptas libero veritatis, cupiditate, officiis sint reiciendis ad fuga ipsum commodi. Optio.
-          </p>
-        </ul>
-      </div>
+<div class="row">
+  <h1>Experiencia Laboral</h1>
+  <div class="col-lg-2">
+    <button type="button" class="btn btn-success" routerLink="/nuevaexp" *ngIf="isLogged">
+      Nueva experiencia
+    </button>
+  </div>
+  <div class="col-lg-1"></div>
+  <div class="col-lg-11">
+    <table class="table">
+      <tbody>
+        <tr *ngFor="let Experiencia of expe">
+          <td><h3>{{Experiencia.nombreE}}</h3></td>
+          <td>{{Experiencia.descripcionE}}</td>
+          <td *ngIf="isLogged"><button class="btn btn-outline-light btn-rounded" routerLink="/editexp/{{Experiencia.id}}"><i class="bi bi-pencil"></i> Editar</button></td>
+          <td *ngIf="isLogged"><button class="btn btn-danger btn-rounded" (click)="delete(Experiencia.id)"><i class="bi bi-trash"></i> Borrar</button></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>
