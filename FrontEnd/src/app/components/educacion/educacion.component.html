@@ -1,28 +1,21 @@
-<div class="container">
-  <div class="row">
-    <h1>Educación</h1>
-      <div class="col-lg-1"></div>
-      <div class="col-lg-11">
-        <ul>
-          <li>
-            <h1>Carrera</h1> - <h3>(Establecimiento)</h3>
-          </li>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex nihil nulla laudantium perferendis enim eos aspernatur numquam totam voluptas libero veritatis, cupiditate, officiis sint reiciendis ad fuga ipsum commodi. Optio.
-          </p>
-          <li>
-            <h1>Carrera</h1> - <h3>(Establecimiento)</h3>
-          </li>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex nihil nulla laudantium perferendis enim eos aspernatur numquam totam voluptas libero veritatis, cupiditate, officiis sint reiciendis ad fuga ipsum commodi. Optio.
-          </p>
-          <li>
-            <h1>Carrera</h1> - <h3>(Establecimiento)</h3>
-          </li>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex nihil nulla laudantium perferendis enim eos aspernatur numquam totam voluptas libero veritatis, cupiditate, officiis sint reiciendis ad fuga ipsum commodi. Optio.
-          </p>
-        </ul>
-      </div>
+<div class="row">
+  <h1>Educacion</h1>
+  <div class="col-lg-2">
+    <button type="button" class="btn btn-success" routerLink="/nuevaedu" *ngIf="isLogged">
+      Agregar Educacion
+    </button>
+  </div>
+  <div class="col-lg-1"></div>
+  <div class="col-lg-11">
+    <table class="table">
+      <tbody>
+        <tr *ngFor="let Educacion of educacion">
+          <td><h3>{{Educacion.nombreE}}</h3></td>
+          <td>{{Educacion.descripcionE}}</td>
+          <td *ngIf="isLogged"><button class="btn btn-outline-light btn-rounded" routerLink="/editedu/{{Educacion.id}}"><i class="bi bi-pencil"></i> Editar</button></td>
+          <td *ngIf="isLogged"><button class="btn btn-danger btn-rounded" (click)="delete(Educacion.id)"><i class="bi bi-trash"></i> Borrar</button></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>
