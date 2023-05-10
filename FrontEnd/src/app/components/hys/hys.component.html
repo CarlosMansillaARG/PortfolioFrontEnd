@@ -1,16 +1,25 @@
-<div class="container">
-  <div class="row">
+<div class="row">
     <h1>Hard & Soft Skills</h1>
-    <div class="col-sm-4 col-md-4 col-lg-4">
+    <div class="col-lg-2">
+      <button type="button" routerLink="/newskill" class="btn btn-success" *ngIf="isLogged">Nueva Skill</button>
+    </div>
+    <div class="col-sm-4 col-md-4 col-lg-4 circulo" *ngFor="let skill of skill">
         <circle-progress
-          [percent]="85"
+          [percent]="(skill.porcentaje)"
           [radius]="100"
-          [imageSrc]="'../assets/html.png'"
-          [showImage]="true"
+          [imageSrc]="''"
+          [title]=""
+          [titleColor]="'#212F3C'"
+          [showTitle]="true"
+          [showImage]="false"
           [imageHeight]="70"
           [imageWidth]="70"
-          [showUnits]="false"
-          [showSubtitle]="false"
+          [showUnits]="true"
+          [subtitle]="(skill.nombre)"
+          [subtitleFontWeight]="''"
+          [subtitleFontSize]="'30'"
+          [subtitleColor]="'#201818'"
+          [showSubtitle]="true"
           [outerStrokeWidth]="16"
           [innerStrokeWidth]="8"
           [outerStrokeColor]="'#14ff4f'"
@@ -18,151 +27,10 @@
           [animation]="true"
           [animationDuration]="600"
         ></circle-progress>
+        <div>
+          <td *ngIf="isLogged"><button class="btn btn-outline-light btn-rounded" routerLink="/editskill/{{skill.id}}"><i class="bi bi-pencil"></i></button></td>
+          <td *ngIf="isLogged"><button class="btn btn-danger btn-rounded" (click)="delete(skill.id)"><i class="bi bi-trash"></i></button></td>
+        </div>
     </div>
-    <div class="col-sm-4 col-md-4 col-lg-4">
-      <circle-progress
-        [percent]="75"
-        [radius]="100"
-        [imageSrc]="'../assets/CSS.png'"
-        [showImage]="true"
-        [imageHeight]="70"
-        [imageWidth]="70"
-        [showUnits]="false"
-        [showSubtitle]="false"
-        [outerStrokeWidth]="16"
-        [innerStrokeWidth]="8"
-        [outerStrokeColor]="'#14ff4f'"
-        [innerStrokeColor]="'#ff1453'"
-        [animation]="true"
-        [animationDuration]="600"
-      ></circle-progress>
-    </div>
-    <div class="col-sm-4 col-md-4 col-lg-4">
-      <circle-progress
-        [percent]="55"
-        [radius]="100"
-        [imageSrc]="'../assets/js.png'"
-        [showImage]="true"
-        [imageHeight]="70"
-        [imageWidth]="70"
-        [showUnits]="false"
-        [showSubtitle]="false"
-        [outerStrokeWidth]="16"
-        [innerStrokeWidth]="8"
-        [outerStrokeColor]="'#14ff4f'"
-        [innerStrokeColor]="'#ff1453'"
-        [animation]="true"
-        [animationDuration]="600"
-      ></circle-progress>
-    </div>
-    <div class="col-sm-4 col-md-4 col-lg-4">
-      <circle-progress
-        [percent]="70"
-        [radius]="100"
-        [imageSrc]="'../assets/angular.png'"
-        [showImage]="true"
-        [imageHeight]="70"
-        [imageWidth]="70"
-        [showUnits]="false"
-        [showSubtitle]="false"
-        [outerStrokeWidth]="16"
-        [innerStrokeWidth]="8"
-        [outerStrokeColor]="'#14ff4f'"
-        [innerStrokeColor]="'#ff1453'"
-        [animation]="true"
-        [animationDuration]="600"
-      ></circle-progress>
-    </div>
-    <div class="col-sm-4 col-md-4 col-lg-4">
-      <circle-progress
-        [percent]="60"
-        [radius]="100"
-        [imageSrc]="'../assets/bootstrap.png'"
-        [showImage]="true"
-        [imageHeight]="70"
-        [imageWidth]="70"
-        [showUnits]="false"
-        [showSubtitle]="false"
-        [outerStrokeWidth]="16"
-        [innerStrokeWidth]="8"
-        [outerStrokeColor]="'#14ff4f'"
-        [innerStrokeColor]="'#ff1453'"
-        [animation]="true"
-        [animationDuration]="600"
-      ></circle-progress>
-    </div>
-    <div class="col-sm-4 col-md-4 col-lg-4">
-      <circle-progress
-        [percent]="75"
-        [radius]="100"
-        [imageSrc]="'../assets/mysql.png'"
-        [showImage]="true"
-        [imageHeight]="90"
-        [imageWidth]="90"
-        [showUnits]="false"
-        [showSubtitle]="false"
-        [outerStrokeWidth]="16"
-        [innerStrokeWidth]="8"
-        [outerStrokeColor]="'#14ff4f'"
-        [innerStrokeColor]="'#ff1453'"
-        [animation]="true"
-        [animationDuration]="600"
-      ></circle-progress>
-    </div>
-    <div class="col-sm-4 col-md-4 col-lg-4">
-      <circle-progress
-        [percent]="80"
-        [radius]="100"
-        [imageSrc]="'../assets/github.png'"
-        [showImage]="true"
-        [imageHeight]="70"
-        [imageWidth]="70"
-        [showUnits]="false"
-        [showSubtitle]="false"
-        [outerStrokeWidth]="16"
-        [innerStrokeWidth]="8"
-        [outerStrokeColor]="'#14ff4f'"
-        [innerStrokeColor]="'#ff1453'"
-        [animation]="true"
-        [animationDuration]="600"
-      ></circle-progress>
-    </div>
-    <div class="col-sm-4 col-md-4 col-lg-4">
-      <circle-progress
-        [percent]="55"
-        [radius]="100"
-        [imageSrc]="'../assets/eng.png'"
-        [showImage]="true"
-        [imageHeight]="70"
-        [imageWidth]="70"
-        [showUnits]="false"
-        [showSubtitle]="false"
-        [outerStrokeWidth]="16"
-        [innerStrokeWidth]="8"
-        [outerStrokeColor]="'#14ff4f'"
-        [innerStrokeColor]="'#ff1453'"
-        [animation]="true"
-        [animationDuration]="600"
-      ></circle-progress>
-    </div>
-    <div class="col-sm-4 col-md-4 col-lg-4">
-      <circle-progress
-        [percent]="70"
-        [radius]="100"
-        [imageSrc]="'../assets/grupal.png'"
-        [showImage]="true"
-        [imageHeight]="70"
-        [imageWidth]="70"
-        [showUnits]="false"
-        [showSubtitle]="false"
-        [outerStrokeWidth]="16"
-        [innerStrokeWidth]="8"
-        [outerStrokeColor]="'#14ff4f'"
-        [innerStrokeColor]="'#ff1453'"
-        [animation]="true"
-        [animationDuration]="600"
-      ></circle-progress>
-    </div>
-  </div>
 </div>
 
