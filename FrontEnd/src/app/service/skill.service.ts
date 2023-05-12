@@ -7,7 +7,8 @@ import { Skill } from '../model/skill';
   providedIn: 'root'
 })
 export class SkillService {
-  URL = 'http://localhost:8080/skill/';
+  /*URL = 'http://localhost:8080/skill/';*/
+  URL = 'https://backendportfolio-q1cq.onrender.com/skill/';
 
   constructor(private httpClient: HttpClient) { }
 

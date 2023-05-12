@@ -5,34 +5,49 @@
 /*foto perfil*/
 @media (min-width: 576px){
   #fotoperfil{
-    position: absolute;
-    width: 20%;
+    /*position: absolute;
+    width: 20%;*/
     border-radius: 100%;
-    left: 2%;
-    top: 105%;
+    box-shadow: 3px 3px 3px grey;
+    /*left: 2%;
+    top: 105%;*/
+  }
+  .descripcion{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .editar{
+    display: flex;
+    justify-content: center;
   }
 }
 @media (max-width: 575px){
   #fotoperfil{
-    position: absolute;
-    width: 30%;
+    /*position: absolute;
+    width: 30%;*/
     border-radius: 100%;
-    left: 35%;
-    top: 35%;
+    box-shadow: 3px 3px 3px grey;
+    /*left: 35%;
+    top: 35%;*/
+  }
+  .editar{
+    display: flex;
+    justify-content: center;
   }
 }
 /*etiqueta nombre*/
 
 #nombre{
   font-weight: bold;
-  font-size: 50px;
+  font-size: 40px;
   margin-top: 10%;
 }
 #carrera{
   font-size: 25px;
 }
-@media (max-width: 575px){
+/*@media (max-width: 575px){
   #nombre{
     margin-top: 25%;
   }
-}
+}*/
