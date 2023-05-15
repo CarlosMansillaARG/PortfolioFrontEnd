@@ -1,8 +1,8 @@
-div{
-  background: #396afc;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to left, #2948ff, #396afc);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to left, #2948ff, #396afc); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
+/*div{
+  background: #396afc;
+  background: -webkit-linear-gradient(to left, #2948ff, #396afc);
+  background: linear-gradient(to left, #2948ff, #396afc);
+}*/
 .container-fluid{
   display: flex;
   justify-content: space-between;
