@@ -11,6 +11,7 @@ import { EditSkillComponent } from './components/hys/edit-skill.component';
 import { EditAcercadeComponent } from './components/acerca-de/edit-acercade.component';
 import { NewProyectoComponent } from './components/proyecto/new-proyecto.component';
 import { EditProyectoComponent } from './components/proyecto/edit-proyecto.component';
+import { ProyectoComponent } from './components/proyecto/proyecto.component';
 
 const routes: Routes = [
   {path:'', component: HomeComponent},
@@ -23,7 +24,8 @@ const routes: Routes = [
   {path: 'editskill/:id', component: EditSkillComponent},
   {path: 'editacercade/:id', component: EditAcercadeComponent},
   {path: 'nuevoproy', component: NewProyectoComponent},
-  {path: 'editproy/:id', component: EditProyectoComponent}
+  {path: 'editproy/:id', component: EditProyectoComponent},
+  {path: 'proyrea/', component: ProyectoComponent}
 ];
 
 @NgModule({
